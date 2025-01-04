@@ -5,7 +5,7 @@ import java.util.List;
 public interface ListInterface {
 
     //    void remove(int  val);
-    List<Integer> add(int val);
+    void add(int val);
 
     void remove(int index);
 

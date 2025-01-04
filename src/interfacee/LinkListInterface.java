@@ -2,6 +2,6 @@ package interfacee;
 
 import java.util.LinkedList;
 
-public interface LinkListInterface {
+public interface LinkListInterface extends ListInterface{
     //LinkedList <Integer> findLinkList();
 }
