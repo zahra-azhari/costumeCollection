@@ -24,7 +24,7 @@ public class Main {
         ListInterface list2 = new LinkListIMP();
         list2.add(1);
         list2.add(3);
-        list2.add(5);
+        list2.add(5);   
         list2.add(7);
 
 
