@@ -19,7 +19,6 @@ public class LinkListIMP implements LinkListInterface {
             head = temp;
             first = temp;
             size++;
-            System.out.println("just one item exsist & added." + temp.getPrev() + "  " + temp.getNext() + "  " + temp.getValue(size));
             return;
         }
 
@@ -30,7 +29,6 @@ public class LinkListIMP implements LinkListInterface {
         head = temp;
         size++;
 
-        System.out.println(temp.getPrev() + "  " + temp.getNext() + "  " + temp.getValue(size));
     }
 
     @Override
@@ -47,7 +45,7 @@ public class LinkListIMP implements LinkListInterface {
             size--;
             return;
         } else {
-            while (flag) {
+            /*while (flag) {
                 if ((counter == index && (counter % size) != 0) || index == 0 || index == size - 1) {
                     size--;
                     temp.setPrev(temp.getNext());
@@ -56,12 +54,22 @@ public class LinkListIMP implements LinkListInterface {
                     System.out.println("removed correctly");
                 }
                 counter++;
+            }*/
+
+            while(temp.getNext() != first) {
+
+                if (counter == index) {
+                    temp.getNext().setPrev(temp.getPrev());
+                    temp.getPrev().setNext(temp.getNext());
+                    size--;
+                    System.out.println("removed");
+                    break;
+                }
+                temp = temp.getNext();
+                counter++;
             }
         }
 
-        for (int i = 0; i < size; i++) {
-            System.out.print(temp.getPrev() + " " + temp.getValue(i) + " " + temp.getNext() + "\n");
-        }
     }
 
     @Override
@@ -71,11 +79,12 @@ public class LinkListIMP implements LinkListInterface {
 
     @Override
     public int get(int index) {
-        Node temp = new Node();
+        Node temp = first;
         for (int i = 0; i < size; i++) {
             if (i == index) {
-                return temp.getValue(index);
+                return temp.getValue();
             }
+            temp = temp.getNext();
         }
         return -1;
     }

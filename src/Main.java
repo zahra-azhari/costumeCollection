@@ -27,7 +27,9 @@ public class Main {
         list2.add(5);
         list2.add(7);
 
-
+        list2.remove(2);
+        list2.add(3);
+        System.out.println(list2.get(2));
 
 
     }

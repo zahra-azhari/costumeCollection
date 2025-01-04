@@ -17,7 +17,7 @@ public class Node {
 //        this.tail = tail;
     }
 
-    public int getValue(int val) {
+    public int getValue() {
         return value;
     }
 
